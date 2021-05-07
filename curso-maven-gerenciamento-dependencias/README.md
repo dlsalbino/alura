@@ -6,9 +6,10 @@
 - version:
 - scope:
     we can have some options, like:
-        - compile: 
-        - runtime:
-        - provided:
-        - test: 
+        - compile: used only during compilation process;
+        - runtime: used for while the application is running
+        - provided: used when we use application servers, provided by it;
+        - system: 
+        - test: used only during tests execution 
         
   
