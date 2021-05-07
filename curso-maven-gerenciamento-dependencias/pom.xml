@@ -5,6 +5,7 @@
 	<groupId>br.com.alura</groupId>
 	<artifactId>loja</artifactId>
 	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
@@ -22,6 +23,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>loja-tibem</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
