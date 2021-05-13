@@ -7,10 +7,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @EnableWebSecurity
 @Configuration
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
+
+    private AutenticacaoService autencicacaoService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -21,6 +24,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(autencicacaoService);
     }
 
     @Override
