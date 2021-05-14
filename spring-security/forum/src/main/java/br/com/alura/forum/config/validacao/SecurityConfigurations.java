@@ -1,5 +1,6 @@
 package br.com.alura.forum.config.validacao;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -23,14 +24,14 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
 //                .anyRequest().authenticated().and().formLogin();
 
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/topicos/*").permitAll()
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
                 .and()
-                .authorizeRequests().antMatchers(HttpMethod.GET,"/topicos").permitAll()
+                .authorizeRequests().antMatchers(HttpMethod.GET, "/topicos").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated().and().formLogin();
-        http.csrf().disable();
-        http.headers().frameOptions().disable();
+//        http.csrf().disable();
+//        http.headers().frameOptions().disable();
     }
 
     @Override

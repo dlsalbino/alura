@@ -51,6 +51,18 @@ public class Usuario implements UserDetails {
         return true;
     }
 
+    public String toString() {
+        return new StringBuilder()
+                .append("[")
+                .append(this.nome)
+                .append(", ")
+                .append(this.email)
+                .append(", ")
+                .append(this.senha)
+                .append("]")
+                .toString();
+    }
+
     public Long getId() {
         return id;
     }
