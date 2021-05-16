@@ -1,6 +1,5 @@
 package br.com.alura.forum.config.validacao;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -20,10 +19,6 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                .antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
-//                .anyRequest().authenticated().and().formLogin();
-
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/topicos").permitAll()
                 .and()
                 .authorizeRequests().antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
@@ -43,7 +38,4 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
     }
 
-//    public static void main(String[] args) {
-//        System.out.println(new BCryptPasswordEncoder().encode("123456"));
-//    }
 }
