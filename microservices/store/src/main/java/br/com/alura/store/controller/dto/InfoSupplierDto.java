@@ -3,14 +3,13 @@ package br.com.alura.store.controller.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class PurchaseItem {
+@ToString
+public class InfoSupplierDto {
 
-    @JsonProperty("id")
-    private Integer id;
-
-    @JsonProperty("quantidade")
-    private Integer amount;
+    @JsonProperty("endereco")
+    private String address;
 }
