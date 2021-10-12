@@ -1,5 +1,6 @@
 package br.com.alura.store.rest.server;
 
+import br.com.alura.store.model.Purchase;
 import br.com.alura.store.rest.dto.PurchaseDto;
 import br.com.alura.store.service.PurchaseService;
 import lombok.RequiredArgsConstructor;
@@ -16,8 +17,7 @@ public class PurchaseController {
     private final PurchaseService purchaseService;
 
     @PostMapping
-    PurchaseDto create(@RequestBody PurchaseDto purchaseDto) {
-        purchaseService.performPurchase(purchaseDto);
-        return purchaseDto;
+    Purchase create(@RequestBody PurchaseDto purchaseDto) {
+        return purchaseService.performPurchase(purchaseDto);
     }
 }

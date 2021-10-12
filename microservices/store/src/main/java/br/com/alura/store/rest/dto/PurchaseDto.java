@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Collection;
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,7 +13,7 @@ import java.util.Collection;
 public class PurchaseDto {
 
     @JsonProperty(value = "itens")
-    private Collection<PurchaseItemDto> items;
+    private List<PurchaseItemDto> items;
 
     @JsonProperty(value = "endereco")
     private AddressDto addressDto;
