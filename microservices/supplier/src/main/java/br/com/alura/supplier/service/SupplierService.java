@@ -1,7 +1,9 @@
-package br.com.alura.supplier.service.SupplierService;
+package br.com.alura.supplier.service;
 
-import br.com.alura.supplier.controller.dto.InfoSupplierDto;
-import br.com.alura.supplier.repository.Supplier;
+import br.com.alura.supplier.model.InfoSupplier;
+import br.com.alura.supplier.repository.InfoRepository;
+import br.com.alura.supplier.rest.dto.InfoSupplierDto;
+import br.com.alura.supplier.model.Supplier;
 import br.com.alura.supplier.repository.SupplierRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,10 +12,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SupplierService {
 
-    private final SupplierRepository supplierRepository;
+    private final InfoRepository supplierRepository;
 
     public InfoSupplierDto getInfoByState(String state) {
-        Supplier supplierByState = supplierRepository.findByState(state);
+        InfoSupplier supplierByState = supplierRepository.findByState(state);
         return InfoSupplierDto.builder()
                 .id(supplierByState.getId())
                 .name(supplierByState.getName())

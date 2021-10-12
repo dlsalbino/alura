@@ -1,7 +1,7 @@
-package br.com.alura.supplier.controller;
+package br.com.alura.supplier.rest.server;
 
-import br.com.alura.supplier.controller.dto.InfoSupplierDto;
-import br.com.alura.supplier.service.SupplierService.SupplierService;
+import br.com.alura.supplier.rest.dto.InfoSupplierDto;
+import br.com.alura.supplier.service.SupplierService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class SupplierController {
+public class InfoController {
 
     private final SupplierService supplierService;
 

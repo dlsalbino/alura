@@ -1,4 +1,4 @@
-package br.com.alura.supplier.controller.dto;
+package br.com.alura.supplier.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.Setter;
 public class InfoSupplierDto {
 
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
 
     @JsonProperty("nome")
     private String name;

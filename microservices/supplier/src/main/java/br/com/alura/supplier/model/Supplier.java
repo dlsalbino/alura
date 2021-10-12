@@ -1,4 +1,4 @@
-package br.com.alura.supplier.repository;
+package br.com.alura.supplier.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +11,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
+@Deprecated
 public class Supplier {
 
     @Id
