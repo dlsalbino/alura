@@ -9,5 +9,6 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: /Users/daniel.benedito/alura/alura/microservices/cfg
+        git:
+          uri: https://github.com/dlsalbino/microservices-repo
+          search-paths: supplier
