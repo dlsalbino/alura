@@ -1,6 +1,6 @@
-package br.com.alura.store.controller;
+package br.com.alura.store.rest.server;
 
-import br.com.alura.store.controller.dto.PurchaseDto;
+import br.com.alura.store.rest.dto.PurchaseDto;
 import br.com.alura.store.service.PurchaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ public class PurchaseController {
     private final PurchaseService purchaseService;
 
     @PostMapping
-    PurchaseDto create(@RequestBody PurchaseDto purchaseDto){
+    PurchaseDto create(@RequestBody PurchaseDto purchaseDto) {
         purchaseService.performPurchase(purchaseDto);
         return purchaseDto;
     }

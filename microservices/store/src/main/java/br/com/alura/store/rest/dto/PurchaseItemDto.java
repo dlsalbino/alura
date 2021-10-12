@@ -1,4 +1,4 @@
-package br.com.alura.store.controller.dto;
+package br.com.alura.store.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

@@ -1,24 +1,21 @@
 package br.com.alura.store.service;
 
-import br.com.alura.store.controller.dto.InfoSupplierDto;
-import br.com.alura.store.controller.dto.PurchaseDto;
+import br.com.alura.store.rest.client.SupplierApiClient;
+import br.com.alura.store.rest.dto.InfoSupplierDto;
+import br.com.alura.store.rest.dto.PurchaseDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 @RequiredArgsConstructor
 public class PurchaseService {
 
-    private final RestTemplate client;
+    private final SupplierApiClient client;
 
     public void performPurchase(PurchaseDto purchaseDto) {
 
-        ResponseEntity<InfoSupplierDto> exchange = client.exchange("http://supplier/supplier/info/" + purchaseDto.getAddressDto().getState(),
-                HttpMethod.GET, null, InfoSupplierDto.class);
+        InfoSupplierDto infoSupplierDto = client.getSupplierInfo(purchaseDto.getAddressDto().getState());
 
-        System.out.println(exchange.getBody());
+        System.out.println(infoSupplierDto.getAddress());
     }
 }
