@@ -13,3 +13,11 @@ spring:
       path: /h2
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+  application:
+    name: 'supplier'
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
