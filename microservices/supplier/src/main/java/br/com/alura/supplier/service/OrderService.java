@@ -7,6 +7,8 @@ import br.com.alura.supplier.repository.OrderRepository;
 import br.com.alura.supplier.repository.ProductRepository;
 import br.com.alura.supplier.rest.dto.OrderItemDto;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class OrderService {
 
+    private static final Logger log = LoggerFactory.getLogger(OrderService.class);
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
 
@@ -29,6 +32,7 @@ public class OrderService {
         List<OrderItem> orderItems = toOrderItem(items);
         Order order = new Order(orderItems);
         order.setTimeToPrepare(items.size());
+        log.info("Calling database to save order");
         return orderRepository.save(order);
     }
 
